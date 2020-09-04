@@ -1,0 +1,27 @@
+#addBtn_vid button {
+    border: none;
+    outline: none;
+}
+#addBtn_vid img {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    transition: 0.5s !important;
+}
+.addBtn_wrapper_vid {
+    margin: auto;
+    padding: 70px;
+    z-index: 2147483647; 
+    float: right;
+    cursor: pointer; 
+}
+.circle_vid {
+    border-radius: 50% !important;
+    height: 60px;
+    width: 60px;
+    background-color: orange !important;
+    opacity: 0.5;
+    display: flex;
+    box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.2s !important;
+}
