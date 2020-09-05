@@ -5,7 +5,7 @@ import "./Edit.css";
 import Popup from "./Popup.js";
 
 
-function Edit(props) {
+function Edit() {
     var addModeVid = false;
 
     $('.circle_vid').click(function () {
@@ -17,7 +17,7 @@ function Edit(props) {
         return (
             <div className="edit_button">
                 <div id="addBtn_vid" className="addBtn_wrapper_vid">
-                    <Button onClick={props.handleClickOpen} className="circle_vid">
+                    <Button onClick={handleClickOpen} className="circle_vid">
                         <img id="addSign_vid"
                             src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/btw_ic_speeddial_white_24dp_2x.png"
                             alt="" />
