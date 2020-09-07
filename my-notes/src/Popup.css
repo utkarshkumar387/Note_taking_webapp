@@ -1,0 +1,38 @@
+.popup_Button {
+    position: fixed;
+    bottom: 0;
+    
+}
+#addBtn Button {
+    border: none;
+    outline: none;
+}
+
+.addBtn_wrapper {
+    margin: auto;
+    padding: 50px;
+    z-index: 2147483647;
+}
+
+.circle {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    background-color: orange;
+    opacity: 0.5;
+    display: flex;
+    box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.2s;
+}
+
+#addBtn img {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    transition: 0.5s;
+}
+
+#addSign {
+
+    padding: 15px 0 0 0;
+}
