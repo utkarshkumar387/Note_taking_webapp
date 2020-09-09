@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -13,7 +13,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-function Popup() {
+function Popup(props) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -23,6 +23,29 @@ function Popup() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const [note, setNote] = useState({
+    title: "",
+    content: "",
+  });
+
+  const inputEvent = (event) => {
+
+    const {name,value} = event.target;
+
+    setNote((prevData) => {
+      return {
+        ...prevData,
+        [name]: value,
+      };
+    });
+
+    console.log(note);
+  };
+
+  const addEvent = () => {
+    props.passNote(note);
+  }
 
   return (
     <div className="popup">
@@ -57,6 +80,9 @@ function Popup() {
             <TextField
               autoFocus
               margin="dense"
+              name="title"
+              value={note.title}
+              onChange={inputEvent}
               id="addTitle"
               label="Enter title of your note..."
               type="text"
@@ -65,6 +91,9 @@ function Popup() {
             <TextField
               autoFocus
               margin="dense"
+              name="content"
+              value={note.content}
+              onChange={inputEvent}
               id="addNote"
               label="Enter your note..."
               type="text"
@@ -76,7 +105,7 @@ function Popup() {
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={handleClose} color="primary" id="addBtn">
+          <Button onClick={addEvent} color="primary" id="addBtn">
             Add note
           </Button>
         </DialogActions>

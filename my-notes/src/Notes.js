@@ -5,6 +5,7 @@ import Isotope from "isotope-layout";
 // import $ from 'jquery';
 
 function Notes(props) {
+  
   return (
     <div className="note" id="notes">
       <div className="note_card grid">

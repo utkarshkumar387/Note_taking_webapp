@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header.js';
 import Notes from './Notes.js';
 import { Container } from '@material-ui/core';
@@ -9,6 +9,14 @@ import Popup from './Popup.js'
 import IsoTopeGrid from "react-isotope";
 
 function App() {
+    const[addItem, setAddItem] = useState();
+
+    const addNote = (note) => {
+        // alert("Clicked");
+        setAddItem((prevData) => {
+            return [...prevData, note];
+        })
+    }
     return (
         <div className="Notes">
             <Header />
@@ -22,7 +30,7 @@ function App() {
                 />
             })}
             </Container>
-            <Popup />
+            <Popup passNote={addNote} />
         </div>
     )
 }
