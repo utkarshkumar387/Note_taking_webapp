@@ -8,6 +8,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 // import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import Clock from './Clock.js';
+import Mode from './Mode.js';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -88,6 +89,7 @@ function Header() {
             />
           </div>
           <Clock />
+          <Mode />
         </Toolbar>
       </AppBar>
     </div>
